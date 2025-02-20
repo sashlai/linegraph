@@ -1,0 +1,217 @@
+/* ОБЩИЕ НАСТРОЙКИ */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* ХЕДЕР */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 10px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo img {
+    height: 40px;
+}
+
+/* ВЫРАВНИВАНИЕ МЕНЮ */
+.nav-left {
+    display: flex;
+    justify-content: flex-start;
+    flex: 1;
+}
+
+.nav-right {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+/* ГЛАВНЫЙ БЛОК */
+.hero {
+    position: relative;
+    text-align: center;
+    background: white;
+    padding-top: 90px; /* Добавили место над картинкой */
+    overflow: hidden;
+}
+
+/* ЗАГОЛОВОК */
+.hero-title {
+    font-size: 64px;
+    font-weight: bold;
+    position: absolute;
+    top: -10px; /* Теперь он в дополнительном пространстве, но не заходит под хедер */
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: black;
+    text-align: center;
+    width: 100%;
+    z-index: 10; /* Заголовок поверх всего */
+}
+/* ИЗОБРАЖЕНИЕ */
+.hero-image {
+    position: relative;
+    width: 100%;
+    height: 520px;
+    overflow: hidden;
+    margin-top: 20px; /* Сдвигаем вниз, чтобы появилось место сверху */
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* ТЕКСТ */
+.hero-text {
+    font-size: 20px;
+    margin-top: 20px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+/* СЕКЦИИ */
+.about, .services, .contact {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* Контейнер контактов */
+.contact-section {
+    position: relative;
+    text-align: right;
+    padding: 20px;
+}
+
+/* Кнопка стрелка */
+.toggle-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+/* Контейнер контактов (скрыт по умолчанию) */
+.contact-content {
+    display: none;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: left;
+    position: absolute;
+    right: 10px;
+    top: 40px;
+    width: 300px;
+}
+
+/* Отображение при активации */
+.contact-section.active .contact-content {
+    display: block;
+}
+
+/* Поворот стрелки при открытии */
+.contact-section.active .toggle-button {
+    transform: rotate(180deg);
+}
+
+
+/* ПОДВАЛ */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+}
+
+/* АДАПТИВНОСТЬ */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .logo {
+        position: static;
+        transform: none;
+        margin-bottom: 10px;
+    }
+
+    .nav-left, .nav-right {
+        flex: none;
+        justify-content: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .hero-title {
+        font-size: 36px;
+        top: 10%;
+    }
+
+    .hero-text {
+        font-size: 16px;
+        text-align: left;
+        padding-left: 10px;
+    }
+
+    .hero-image {
+        height: 300px;
+    }
+}
