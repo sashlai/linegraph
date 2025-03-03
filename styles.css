@@ -1,4 +1,3 @@
-/* ОБЩИЕ НАСТРОЙКИ */
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
@@ -6,7 +5,6 @@ body {
     background-color: #f5f5f5;
 }
 
-/* ХЕДЕР */
 header {
     display: flex;
     align-items: center;
@@ -18,39 +16,41 @@ header {
     top: 0;
     left: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .header-container {
     display: flex;
     width: 100%;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; 
+    padding: 0 20px; 
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1; 
+    text-align: center;
+}
+
+.logo img {
+    height: 30px;
+    max-width: 200px; 
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    flex: 1; 
+    justify-content: center;
 }
 
 .logo {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-}
-
-.logo img {
-    height: 40px;
-}
-
-/* ВЫРАВНИВАНИЕ МЕНЮ */
-.nav-left {
-    display: flex;
-    justify-content: flex-start;
-    flex: 1;
-}
-
-.nav-right {
-    display: flex;
-    justify-content: flex-end;
-    flex: 1;
 }
 
 nav ul {
@@ -68,38 +68,36 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: black;
-    font-size: 16px;
+    font-size: 24px;
 }
 
-/* ГЛАВНЫЙ БЛОК */
 .hero {
     position: relative;
     text-align: center;
     background: white;
-    padding-top: 90px; /* Добавили место над картинкой */
+    padding-top: 90px; 
     overflow: hidden;
 }
 
-/* ЗАГОЛОВОК */
 .hero-title {
     font-size: 64px;
     font-weight: bold;
     position: absolute;
-    top: -10px; /* Теперь он в дополнительном пространстве, но не заходит под хедер */
+    top: -10px; 
     left: 50%;
     transform: translate(-50%, 0);
     color: black;
     text-align: center;
     width: 100%;
-    z-index: 10; /* Заголовок поверх всего */
+    z-index: 10; 
 }
-/* ИЗОБРАЖЕНИЕ */
+
 .hero-image {
     position: relative;
     width: 100%;
     height: 520px;
     overflow: hidden;
-    margin-top: 20px; /* Сдвигаем вниз, чтобы появилось место сверху */
+    margin-top: 20px; 
 }
 
 .hero-image img {
@@ -108,66 +106,88 @@ nav ul li a {
     object-fit: cover;
 }
 
-
-/* ТЕКСТ */
 .hero-text {
-    font-size: 20px;
+    font-size: 24px;
     margin-top: 20px;
     text-align: left;
     padding-left: 20px;
 }
 
-/* СЕКЦИИ */
 .about, .services, .contact {
     padding: 60px 20px;
     text-align: center;
 }
 
-/* Контейнер контактов */
 .contact-section {
-    position: relative;
-    text-align: right;
-    padding: 20px;
-}
-
-/* Кнопка стрелка */
-.toggle-button {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-}
-
-/* Контейнер контактов (скрыт по умолчанию) */
-.contact-content {
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: white;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    text-align: left;
-    position: absolute;
-    right: 10px;
-    top: 40px;
-    width: 300px;
 }
 
-/* Отображение при активации */
-.contact-section.active .contact-content {
-    display: block;
+.contact-container {
+    display: flex;
+    max-width: 100%;
+    width: 100%;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0; 
 }
 
-/* Поворот стрелки при открытии */
-.contact-section.active .toggle-button {
-    transform: rotate(180deg);
+.contact-info {
+    flex: 1;
+    text-align: center;
 }
 
+.contact-info p {
+    font-size: 24px;
+    margin: 5px 0;
+}
 
-/* ПОДВАЛ */
+.contact-map {
+    flex: 1;
+    height: 200px;
+    min-width: 200px; 
+}
+
+.about-section {
+    padding: 60px 20px;
+    background: white;
+}
+
+.about-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+    align-items: center;
+}
+
+.about-images-left, .about-images-right {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1;
+}
+
+.about-images-left img, .about-images-right img {
+    width: 100%;
+    height: auto;
+}
+
+.about-text {
+    flex: 2;
+    text-align: justify;
+    font-size: 24px;
+    line-height: 1.6;
+}
+
+.about-text h2 {
+    font-size: 64px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 footer {
     text-align: center;
     padding: 20px;
@@ -175,43 +195,3 @@ footer {
     color: white;
 }
 
-/* АДАПТИВНОСТЬ */
-@media screen and (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .logo {
-        position: static;
-        transform: none;
-        margin-bottom: 10px;
-    }
-
-    .nav-left, .nav-right {
-        flex: none;
-        justify-content: center;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .hero-title {
-        font-size: 36px;
-        top: 10%;
-    }
-
-    .hero-text {
-        font-size: 16px;
-        text-align: left;
-        padding-left: 10px;
-    }
-
-    .hero-image {
-        height: 300px;
-    }
-}

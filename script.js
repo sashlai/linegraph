@@ -3,6 +3,3 @@ document.querySelector("form").addEventListener("submit", function(event) {
     alert("Спасибо! Мы свяжемся с вами в ближайшее время.");
 });
 
-function toggleContacts() {
-    document.querySelector(".contact-section").classList.toggle("active");
-}
